@@ -1,0 +1,63 @@
+
+# truck cargo space
+
+cargo_width = 1780
+cargo_depth = 4500
+cargo_height = 2450
+
+# box types
+
+small_width = 330
+small_depth = 275
+small_height = 406
+
+avg_width = 330
+avg_depth = 550
+avg_height = 406
+
+large_width = 330
+large_depth = 550
+large_height = 812
+
+# Insert amount of boxes
+
+amount_large = int(input("Insert amount of large boxes: "))
+amount_avg = int(input("Insert amount of avg boxes: "))
+amount_small = int(input("Insert amount of small boxes: "))
+trips = 0
+
+while True:
+    cargo_width = 1780
+    cargo_depth = 4500
+    cargo_height = 2450
+    if amount_large != 0 or amount_avg != 0 or amount_small != 0:
+        trips = trips + 1
+        while True:
+            if large_width <= cargo_width and large_depth <= cargo_depth and large_height <=cargo_height and amount_large != 0:
+                cargo_width = cargo_width - large_width
+                cargo_depth = cargo_depth - large_depth
+                cargo_height = cargo_height - large_height
+                amount_large = amount_large - 1
+            elif avg_width <= cargo_width and avg_depth <= cargo_depth and avg_height <=cargo_height and amount_avg != 0:
+                cargo_width = cargo_width - avg_width
+                cargo_depth = cargo_depth - avg_depth
+                cargo_height = cargo_height - avg_height
+                amount_avg = amount_avg -1
+            elif small_width <= cargo_width and small_depth <= cargo_depth and small_height <=cargo_height and amount_small != 0:
+                cargo_width = cargo_width - small_width
+                cargo_depth = cargo_depth - small_depth
+                cargo_height = cargo_height - small_height
+                amount_small = amount_small -1
+            else:
+                break
+    else:
+        break                
+
+print("The amount of trips needed:", trips)
+
+
+
+
+
+
+
