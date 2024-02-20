@@ -41,6 +41,7 @@ while total_boxes_left > 0:
         trips += 1
         truck = truck_original.copy()
         continue
+#This is a test line for debugging purposes
+#print("You have {} large, {} average and {} small boxes left".format(amount_large, amount_average, amount_small))
 
-print("You have {} large, {} average and {} small boxes left".format(amount_large, amount_average, amount_small))
 print("It took {} trips.".format(trips))
